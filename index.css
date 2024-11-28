@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(numbers.jpg);
+    background-size: cover;
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+    color: rgb(121, 101, 112);
+    padding-top: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden;
+    margin-left: 4.5vw;
+    
+    
+
+}
+.heading{
+    font-size: 4vw;
+    margin-left: 0vw;
+    cursor: context-menu;
+
+}
+
+
+
+.allWarnings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2vw;
+    margin-top: 3vw;
+    margin-right: 5vw;
+    font-size: 2.3vw;
+    flex: 0.7;
+    word-wrap: break-word;
+    cursor: context-menu;
+
+}
+
+.warning1, .warning2, .warning3{
+    color: rgb(255, 55, 55);
+    font-weight: bold;
+    flex: 1;
+    opacity: 0;
+}
+
+.warn1anim, .warn2anim, .warn3anim{
+    animation: animate 3s forwards;
+}
+
+@keyframes animate{
+    0%{opacity: 0;}
+    50%{opacity: 1;}
+    100%{opacity:0;}
+}
+
+.active{
+    display: flex;
+    justify-content: center;
+}
+
+.numbers>p{
+    padding-top: 0.5vh;
+    border: 2px solid  rgb(96, 58, 77) ;
+    width: 2.7vw;
+    height: 2.7vw;
+    font-size: 2vw;
+    border-radius: 20%;
+    margin: 10px 0px 5px 50px;
+    text-align: center;
+
+}
+.nums:hover{
+    background-color: lightcoral;
+    cursor: pointer;
+}
+
+.board{
+    padding-top: 2.5vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 35vw;
+    height: 35vw;
+
+}
+.square{
+    padding-top: 1vh;
+    width: 3.4vw;
+    height: 3.4vw;
+    font-size: 2vw;
+    margin: 0;
+    border: 1.3px solid white;
+    text-align: center;
+    color: black;
+}
+.square:hover{
+    background-color: lightpink;
+    cursor: pointer;
+}
+
+.solveColour{
+    background-color: rgb(198, 114, 127);
+}
+
+.borderBottom{
+    border-bottom: 4px solid white;
+}
+.borderLeft{
+    border-left: 4px solid white;
+}
+.borderRight{
+    border-right: 4px solid white;
+}
+.borderUp{
+    border-top: 4px solid white;
+}
+
+.selected{
+    background-color: lightcoral;
+}
+
+.mainButtons{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5vh;
+    flex:0.9;
+
+}
+
+.solver,.speedup, .newBoard{
+    font-size: 1.5vw;
+    padding: 5px;
+    margin-bottom: 5vw;
+    margin-right: 5vw;
+    transition: 0.5s;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.solver:before, .speedup:before, .newBoard:before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:10px;
+    height: 10px;
+    border-top: 2px solid lightpink;
+    border-left: 2px solid lightpink;
+    transition: 0.5s;
+
+}
+.solver:after, .speedup:after, .newBoard:after{
+    content:'';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid lightpink;
+    border-right: 2px solid lightpink;
+    
+    transition: 0.5s;
+    
+}
+.solver:hover:before, .speedup:hover:before, .newBoard:hover:before {
+    height: 100%;
+    width: 100%;
+}
+.solver:hover:after, .speedup:hover:after, .newBoard:hover:after{
+    height: 100%;
+    width: 100%;
+}
+.solver:hover, .newBoard:hover, .speedup:hover{
+    background-color: lightpink;
+    color: black;
+    box-shadow: 0 0 50px lightpink;
+    cursor: pointer;
+}
